@@ -73,6 +73,213 @@
             margin-bottom: 0.25rem;
         }
 
+        /* Advanced Search */
+        .search-advanced {
+            background: var(--bg-card);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            display: none;
+        }
+
+        .search-advanced.active {
+            display: block;
+        }
+
+        .search-filters {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .filter-btn {
+            padding: 0.5rem;
+            border: 1px solid var(--border-light);
+            border-radius: 6px;
+            background: var(--bg-light);
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: all 0.2s;
+        }
+
+        .filter-btn.active {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* Image Zoom */
+        .modal-zoom-controls {
+            position: absolute;
+            top: 50%;
+            right: 1rem;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            z-index: 3;
+        }
+
+        .zoom-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .zoom-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Swipe Navigation */
+        .swipe-arrows {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 1rem;
+            transform: translateY(-50%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .swipe-arrow {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: all;
+            transition: all 0.2s;
+        }
+
+        .swipe-arrow:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: scale(1.1);
+        }
+
+        /* Settings */
+        .settings-container {
+            padding: 1.5rem 1rem;
+        }
+
+        .settings-group {
+            margin-bottom: 2rem;
+        }
+
+        .settings-group h3 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            opacity: 0.7;
+        }
+
+        .settings-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background: var(--bg-card);
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+            border: 1px solid var(--border-light);
+        }
+
+        .toggle-switch {
+            width: 50px;
+            height: 28px;
+            background: #ccc;
+            border-radius: 14px;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .toggle-switch.active {
+            background: var(--primary-color);
+        }
+
+        .toggle-switch::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: white;
+            top: 2px;
+            left: 2px;
+            transition: all 0.3s;
+        }
+
+        .toggle-switch.active::after {
+            left: 24px;
+        }
+
+        /* Today's Dua Card (Premium) */
+        .today-dua-section {
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .today-dua-card {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .today-dua-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(15, 118, 110, 0.3);
+        }
+
+        .today-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+        }
+
+        .today-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .today-desc {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+
+        .view-more {
+            display: inline-block;
+            font-size: 0.85rem;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+
+        .today-dua-card:hover .view-more {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
         .header-icon {
             font-size: 2rem;
             margin-right: 0.5rem;
@@ -382,6 +589,12 @@
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            transform: scale(1);
+            transition: transform 0.3s;
+        }
+
+        .modal-content.zoomed {
+            transform: scale(2);
         }
 
         .dua-image {
@@ -498,7 +711,7 @@
         <div class="header">
             <h1>
                 <span class="header-icon">🕌</span>
-                <span>தினசரி துஆ</span>
+                <span>Mass Islamic Center</span>
             </h1>
             <p class="tagline">தினமும் ஒரு துஆ, தினமும் ஒரு நன்மை</p>
             <div class="header-actions">
@@ -541,6 +754,15 @@
                     <div class="search-box">
                         <span>🔍</span>
                         <input type="text" id="searchInput" placeholder="துஆவைத் தேடுக...">
+                        <button id="advancedSearchBtn" style="background: none; border: none; cursor: pointer; font-size: 1.2rem; padding: 0 0.5rem;">⚙️</button>
+                    </div>
+                    
+                    <!-- Advanced Search -->
+                    <div class="search-advanced" id="advancedSearch">
+                        <div style="margin-bottom: 1rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; font-size: 0.9rem; font-weight: 600;">அறிமுக:</label>
+                            <div class="search-filters" id="categoryFilters"></div>
+                        </div>
                     </div>
                 </div>
 
@@ -558,15 +780,64 @@
                 </div>
                 <div class="dua-grid" id="favoritesGrid"></div>
             </div>
+
+            <!-- Settings Page -->
+            <div class="page" id="settingsPage">
+                <div class="settings-container">
+                    <h2 style="margin-bottom: 2rem;">⚙️ Settings</h2>
+
+                    <!-- Notifications -->
+                    <div class="settings-group">
+                        <h3>🔔 Notifications</h3>
+                        <div class="settings-item">
+                            <span>Daily Dua Notification</span>
+                            <div class="toggle-switch" id="notificationToggle"></div>
+                        </div>
+                        <div class="settings-item">
+                            <span>Notification Time</span>
+                            <input type="time" id="notificationTime" value="08:00" style="border: none; background: none; color: var(--text-dark);">
+                        </div>
+                    </div>
+
+                    <!-- Display -->
+                    <div class="settings-group">
+                        <h3>🎨 Display</h3>
+                        <div class="settings-item">
+                            <span>Dark Mode</span>
+                            <div class="toggle-switch" id="darkModeToggle"></div>
+                        </div>
+                    </div>
+
+                    <!-- About -->
+                    <div class="settings-group">
+                        <h3>ℹ️ About</h3>
+                        <div class="settings-item">
+                            <div>
+                                <p style="font-weight: 600;">தினசரி துஆ</p>
+                                <p style="font-size: 0.85rem; opacity: 0.7;">Version 2.0 (Premium)</p>
+                                <p style="font-size: 0.85rem; opacity: 0.7; margin-top: 0.5rem;">தினமும் ஒரு துஆ, தினமும் ஒரு நன்மை</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
     <!-- Modal -->
     <div class="modal" id="modal">
-        <div class="modal-content">
+        <div class="modal-content" id="modalContent">
             <img id="modalImage" class="dua-image" src="" alt="">
             <div class="modal-controls">
                 <button class="icon-btn" id="closeModal">✕</button>
+            </div>
+            <div class="swipe-arrows">
+                <button class="swipe-arrow" id="prevDua">◄</button>
+                <button class="swipe-arrow" id="nextDua">►</button>
+            </div>
+            <div class="modal-zoom-controls">
+                <button class="zoom-btn" id="zoomIn">🔍+</button>
+                <button class="zoom-btn" id="zoomOut">🔍-</button>
             </div>
             <div class="modal-bottom">
                 <button class="icon-btn" id="favoriteBtn">🤍</button>
@@ -584,6 +855,10 @@
         <button class="nav-btn" id="favoritesNav">
             <span>⭐</span>
             <span>Favorites</span>
+        </button>
+        <button class="nav-btn" id="settingsNav">
+            <span>⚙️</span>
+            <span>Settings</span>
         </button>
     </div>
 
@@ -652,6 +927,9 @@
         let selectedDua = null;
         let deferredPrompt = null;
         let currentPage = 'home';
+        let notificationsEnabled = localStorage.getItem('notificationsEnabled') === 'true';
+        let notificationTime = localStorage.getItem('notificationTime') || '08:00';
+        let zoomLevel = 1;
 
         // ============= INITIALIZATION =============
         function init() {
@@ -667,6 +945,13 @@
             if (darkMode) {
                 document.documentElement.classList.add('dark');
                 updateDarkModeButton();
+            }
+            updateSettingsToggle();
+            updateNotificationToggle();
+            
+            // Schedule notification if enabled
+            if (notificationsEnabled) {
+                scheduleNotification();
             }
         }
 
@@ -705,6 +990,24 @@
                 renderDuas();
             });
 
+            // Advanced Search
+            document.getElementById('advancedSearchBtn').addEventListener('click', () => {
+                const advanced = document.getElementById('advancedSearch');
+                advanced.classList.toggle('active');
+            });
+
+            // Render category filters for advanced search
+            const filtersContainer = document.getElementById('categoryFilters');
+            categories.slice(1).forEach(cat => {
+                const btn = document.createElement('button');
+                btn.className = 'filter-btn';
+                btn.textContent = cat.icon + ' ' + cat.name;
+                btn.onclick = () => {
+                    btn.classList.toggle('active');
+                };
+                filtersContainer.appendChild(btn);
+            });
+
             // Dark Mode
             document.getElementById('darkModeBtn').addEventListener('click', toggleDarkMode);
 
@@ -715,6 +1018,34 @@
             // Navigation
             document.getElementById('homeNav').addEventListener('click', () => goToPage('home'));
             document.getElementById('favoritesNav').addEventListener('click', () => goToPage('favorites'));
+            document.getElementById('settingsNav').addEventListener('click', () => goToPage('settings'));
+
+            // Settings
+            document.getElementById('notificationToggle').addEventListener('click', toggleNotifications);
+            document.getElementById('darkModeToggle').addEventListener('click', toggleDarkMode);
+            document.getElementById('notificationTime').addEventListener('change', (e) => {
+                notificationTime = e.target.value;
+                localStorage.setItem('notificationTime', notificationTime);
+            });
+
+            // Zoom
+            document.getElementById('zoomIn').addEventListener('click', zoomImageIn);
+            document.getElementById('zoomOut').addEventListener('click', zoomImageOut);
+
+            // Swipe Navigation
+            document.getElementById('nextDua').addEventListener('click', showNextDua);
+            document.getElementById('prevDua').addEventListener('click', showPreviousDua);
+
+            // Touch swipe
+            let touchStartX = 0;
+            document.getElementById('modal').addEventListener('touchstart', (e) => {
+                touchStartX = e.touches[0].clientX;
+            });
+            document.getElementById('modal').addEventListener('touchend', (e) => {
+                const touchEndX = e.changedTouches[0].clientX;
+                if (touchStartX - touchEndX > 50) showNextDua();
+                if (touchEndX - touchStartX > 50) showPreviousDua();
+            });
 
             // Modal
             document.getElementById('closeModal').addEventListener('click', closeModal);
@@ -744,6 +1075,8 @@
                                    dua.description.toLowerCase().includes(searchTerm);
                 return categoryMatch && searchMatch;
             });
+            
+            filteredDuas = filtered;  // Store for swipe navigation
 
             const grid = document.getElementById('duaGrid');
             if (filtered.length === 0) {
@@ -813,6 +1146,95 @@
             localStorage.setItem('darkMode', darkMode);
             document.documentElement.classList.toggle('dark');
             updateDarkModeButton();
+            updateSettingsToggle();
+        }
+
+        // Notifications
+        function toggleNotifications() {
+            notificationsEnabled = !notificationsEnabled;
+            localStorage.setItem('notificationsEnabled', notificationsEnabled);
+            updateNotificationToggle();
+            
+            if (notificationsEnabled) {
+                requestNotificationPermission();
+                scheduleNotification();
+            }
+        }
+
+        function updateNotificationToggle() {
+            const toggle = document.getElementById('notificationToggle');
+            toggle.classList.toggle('active', notificationsEnabled);
+        }
+
+        function updateSettingsToggle() {
+            const darkToggle = document.getElementById('darkModeToggle');
+            darkToggle.classList.toggle('active', darkMode);
+        }
+
+        function requestNotificationPermission() {
+            if ('Notification' in window && Notification.permission === 'default') {
+                Notification.requestPermission();
+            }
+        }
+
+        function scheduleNotification() {
+            if ('Notification' in window && Notification.permission === 'granted' && notificationsEnabled) {
+                const [hours, minutes] = notificationTime.split(':');
+                const now = new Date();
+                const notifTime = new Date();
+                notifTime.setHours(parseInt(hours), parseInt(minutes), 0);
+                
+                if (notifTime <= now) {
+                    notifTime.setDate(notifTime.getDate() + 1);
+                }
+                
+                const timeout = notifTime - now;
+                setTimeout(() => {
+                    const today = duasData[new Date().getDate() % duasData.length];
+                    new Notification('தினசரி துஆ 🕌', {
+                        body: today.title + ' - ' + today.description,
+                        icon: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="50" y="75" font-size="80" text-anchor="middle">🕌</text></svg>'
+                    });
+                    if (notificationsEnabled) scheduleNotification();
+                }, timeout);
+            }
+        }
+
+        // Zoom
+        function zoomImageIn() {
+            zoomLevel = Math.min(zoomLevel + 0.5, 3);
+            updateZoom();
+        }
+
+        function zoomImageOut() {
+            zoomLevel = Math.max(zoomLevel - 0.5, 1);
+            updateZoom();
+        }
+
+        function updateZoom() {
+            const content = document.getElementById('modalContent');
+            content.style.transform = `scale(${zoomLevel})`;
+        }
+
+        // Swipe Navigation
+        let filteredDuas = [];
+
+        function showNextDua() {
+            if (!selectedDua || filteredDuas.length === 0) return;
+            const currentIndex = filteredDuas.findIndex(d => d.id === selectedDua.id);
+            const nextIndex = (currentIndex + 1) % filteredDuas.length;
+            openModal(filteredDuas[nextIndex].id);
+            zoomLevel = 1;
+            updateZoom();
+        }
+
+        function showPreviousDua() {
+            if (!selectedDua || filteredDuas.length === 0) return;
+            const currentIndex = filteredDuas.findIndex(d => d.id === selectedDua.id);
+            const nextIndex = (currentIndex - 1 + filteredDuas.length) % filteredDuas.length;
+            openModal(filteredDuas[nextIndex].id);
+            zoomLevel = 1;
+            updateZoom();
         }
 
         function updateDarkModeButton() {
@@ -883,11 +1305,21 @@
             if (page === 'home') {
                 document.getElementById('homePage').classList.add('active');
                 document.getElementById('homeNav').classList.add('active');
-            } else {
+            } else if (page === 'favorites') {
                 document.getElementById('favoritesPage').classList.add('active');
                 document.getElementById('favoritesNav').classList.add('active');
                 renderFavorites();
+            } else if (page === 'settings') {
+                document.getElementById('settingsPage').classList.add('active');
+                document.getElementById('settingsNav').classList.add('active');
+                updateSettingsUI();
             }
+        }
+
+        function updateSettingsUI() {
+            updateNotificationToggle();
+            updateSettingsToggle();
+            document.getElementById('notificationTime').value = notificationTime;
         }
 
         function handleInstall() {
