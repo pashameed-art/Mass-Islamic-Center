@@ -520,6 +520,236 @@
             border: 1px solid #3b82f6;
         }
 
+        /* PIN Protection */
+        .pin-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 10;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .pin-modal.show {
+            display: flex;
+        }
+
+        .pin-container {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            max-width: 300px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .pin-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .pin-input-group {
+            margin: 1.5rem 0;
+        }
+
+        .pin-input {
+            font-size: 1.5rem;
+            letter-spacing: 0.5rem;
+            text-align: center;
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--primary-color);
+            border-radius: 8px;
+            background: var(--bg-light);
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+        .pin-keypad {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .pin-key {
+            padding: 1rem;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .pin-key:hover {
+            background: var(--primary-dark);
+            transform: scale(1.05);
+        }
+
+        .pin-key.delete {
+            grid-column: span 3;
+            background: #ef4444;
+        }
+
+        .pin-key.delete:hover {
+            background: #dc2626;
+        }
+
+        .pin-key.submit {
+            grid-column: span 3;
+            background: #22c55e;
+            font-size: 1rem;
+        }
+
+        .pin-key.submit:hover {
+            background: #16a34a;
+        }
+
+        .pin-error {
+            color: #ef4444;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            min-height: 1.5rem;
+        }
+
+        .pin-info {
+            font-size: 0.85rem;
+            opacity: 0.7;
+            margin-top: 1rem;
+        }
+
+        /* GitHub Sync */
+        .github-sync-section {
+            background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+            padding: 1.5rem;
+            border-radius: 8px;
+            color: #c9d1d9;
+            margin-bottom: 1.5rem;
+            border: 1px solid #30363d;
+        }
+
+        .github-sync-title {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .github-sync-description {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .github-sync-config {
+            background: rgba(48, 54, 61, 0.5);
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            border: 1px solid #30363d;
+        }
+
+        .github-config-group {
+            margin-bottom: 0.75rem;
+        }
+
+        .github-config-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .github-config-label {
+            display: block;
+            font-size: 0.85rem;
+            opacity: 0.7;
+            margin-bottom: 0.5rem;
+        }
+
+        .github-config-input {
+            width: 100%;
+            padding: 0.75rem;
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            color: #c9d1d9;
+            font-family: monospace;
+            font-size: 0.9rem;
+        }
+
+        .github-config-input::placeholder {
+            color: #6e7681;
+        }
+
+        .github-sync-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+        }
+
+        .btn-github {
+            padding: 0.75rem;
+            background: #238636;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .btn-github:hover {
+            background: #2ea043;
+        }
+
+        .btn-github.secondary {
+            background: #30363d;
+            color: #c9d1d9;
+        }
+
+        .btn-github.secondary:hover {
+            background: #484f58;
+        }
+
+        .github-status {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: rgba(48, 54, 61, 0.5);
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+
+        .github-status.synced {
+            background: rgba(34, 134, 58, 0.2);
+            border: 1px solid #238636;
+            color: #7ee787;
+        }
+
+        .github-status.syncing {
+            background: rgba(79, 90, 102, 0.2);
+            border: 1px solid #6e7681;
+            color: #8b949e;
+        }
+
+        .github-status.error {
+            background: rgba(248, 81, 73, 0.2);
+            border: 1px solid #da3633;
+            color: #f85149;
+        }
+
         .header-icon {
             font-size: 2rem;
             margin-right: 0.5rem;
@@ -1132,11 +1362,15 @@
                             </div>
 
                             <div style="margin-top: 1.5rem; border-top: 1px solid var(--border-light); padding-top: 1rem;">
-                                <h4 style="margin-bottom: 1rem;">🔄 GitHub Sync (Coming Soon)</h4>
+                                <h4 style="margin-bottom: 1rem;">☁️ GitHub Sync</h4>
                                 <p style="opacity: 0.7; margin-bottom: 1rem; font-size: 0.9rem;">
-                                    Direct sync with GitHub repository
+                                    உங்க் GitHub repository-ல் direct upload செய்யவும்
                                 </p>
-                                <button class="btn-small" disabled style="opacity: 0.5;">🔒 Disabled - v3.0</button>
+                                <div class="form-group">
+                                    <input type="text" id="githubRepoInput" placeholder="username/repo" style="width: 100%; padding: 0.75rem; margin-bottom: 0.5rem; border: 1px solid var(--border-light); border-radius: 6px;">
+                                    <input type="password" id="githubTokenInput" placeholder="GitHub Personal Token" style="width: 100%; padding: 0.75rem; margin-bottom: 1rem; border: 1px solid var(--border-light); border-radius: 6px;">
+                                </div>
+                                <button class="btn-small" id="syncGithubBtn">📤 Sync to GitHub</button>
                             </div>
                         </div>
                     </div>
@@ -1174,11 +1408,11 @@
                     <div class="settings-group">
                         <h3>👨‍💼 Admin Mode</h3>
                         <div class="settings-item">
-                            <span>Enable Admin Panel</span>
-                            <div class="toggle-switch" id="adminToggle"></div>
+                            <span>Admin Panel Access</span>
+                            <button class="btn-small" id="adminAccessBtn" style="background: var(--primary-color); color: white;">🔐 Setup PIN</button>
                         </div>
                         <p style="font-size: 0.85rem; opacity: 0.7; margin-top: 0.75rem;">
-                            Add duas, upload images, manage content
+                            6-digit PIN உடன் Admin Panel protect செய்யவும்
                         </p>
                     </div>
 
@@ -1195,6 +1429,36 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!-- PIN Protection Modal -->
+    <div class="pin-modal" id="pinModal">
+        <div class="pin-container">
+            <div class="pin-title">🔐 Admin PIN</div>
+            <p id="pinModalMessage" style="margin-bottom: 1rem; font-size: 0.9rem;">Enter your 6-digit PIN</p>
+            
+            <div class="pin-input-group">
+                <input type="password" id="pinInput" class="pin-input" maxlength="6" placeholder="••••••" disabled>
+            </div>
+
+            <div class="pin-keypad">
+                <button class="pin-key" onclick="pinKeypress('1')">1</button>
+                <button class="pin-key" onclick="pinKeypress('2')">2</button>
+                <button class="pin-key" onclick="pinKeypress('3')">3</button>
+                <button class="pin-key" onclick="pinKeypress('4')">4</button>
+                <button class="pin-key" onclick="pinKeypress('5')">5</button>
+                <button class="pin-key" onclick="pinKeypress('6')">6</button>
+                <button class="pin-key" onclick="pinKeypress('7')">7</button>
+                <button class="pin-key" onclick="pinKeypress('8')">8</button>
+                <button class="pin-key" onclick="pinKeypress('9')">9</button>
+                <button class="pin-key delete" onclick="pinDelete()">🔙 Delete</button>
+                <button class="pin-key" onclick="pinKeypress('0')">0</button>
+                <button class="pin-key submit" onclick="pinSubmit()">✓ Submit</button>
+            </div>
+
+            <div class="pin-error" id="pinError"></div>
+            <div class="pin-info" id="pinInfo"></div>
         </div>
     </div>
 
@@ -1217,6 +1481,28 @@
                 <button class="icon-btn" id="favoriteBtn">🤍</button>
                 <button class="icon-btn" id="shareBtn">📤</button>
             </div>
+        </div>
+    </div>
+
+    <!-- PIN Verification Modal -->
+    <div class="modal" id="pinModal" style="background: rgba(0, 0, 0, 0.7);">
+        <div class="modal-content" style="width: 90%; max-width: 400px; aspect-ratio: auto; padding: 2rem;">
+            <h2 style="margin-bottom: 1.5rem; text-align: center;">🔐 Admin PIN</h2>
+            
+            <div id="pinSetup" style="display: none;">
+                <p style="margin-bottom: 1rem; opacity: 0.9;">முதல் முறை - 6 இலக்க PIN அமைக்கவும்:</p>
+                <input type="password" id="setPinInput" placeholder="6 digit PIN" maxlength="6" style="width: 100%; padding: 1rem; margin-bottom: 1rem; border: 2px solid var(--primary-color); border-radius: 8px; font-size: 1.5rem; text-align: center; letter-spacing: 0.5rem;">
+                <button class="btn-save" onclick="savePIN()" style="width: 100%;">✅ Set PIN</button>
+            </div>
+
+            <div id="pinVerify" style="display: none;">
+                <p style="margin-bottom: 1rem; opacity: 0.9;">உங்க் PIN உள்ளிடவும்:</p>
+                <input type="password" id="verifyPinInput" placeholder="6 digit PIN" maxlength="6" style="width: 100%; padding: 1rem; margin-bottom: 1rem; border: 2px solid var(--primary-color); border-radius: 8px; font-size: 1.5rem; text-align: center; letter-spacing: 0.5rem;">
+                <button class="btn-save" onclick="verifyPIN()" style="width: 100%; margin-bottom: 0.5rem;">✅ Verify</button>
+                <button class="btn-cancel" onclick="closePINModal()" style="width: 100%;">Cancel</button>
+            </div>
+
+            <div id="pinError" style="display: none; background: rgba(239, 68, 68, 0.2); color: #ef4444; padding: 1rem; border-radius: 6px; margin-top: 1rem; text-align: center;"></div>
         </div>
     </div>
 
@@ -1308,8 +1594,98 @@
         let notificationsEnabled = localStorage.getItem('notificationsEnabled') === 'true';
         let notificationTime = localStorage.getItem('notificationTime') || '08:00';
         let zoomLevel = 1;
-        let isAdmin = localStorage.getItem('adminMode') === 'true';
+        let isAdmin = false;  // Changed to false by default
         let selectedImageFile = null;
+        let adminPIN = localStorage.getItem('adminPIN') || null;
+        let adminAuthenticated = false;
+        let githubRepo = localStorage.getItem('githubRepo') || '';
+
+        // ============= PIN PROTECTION FUNCTIONS =============
+        function setupAdminPIN() {
+            if (!adminPIN) {
+                // First time setup - create PIN
+                showPINModal('setup');
+            } else {
+                // Verify PIN
+                showPINModal('verify');
+            }
+        }
+
+        function showPINModal(mode) {
+            const modal = document.getElementById('pinModal');
+            const message = document.getElementById('pinModalMessage');
+            const info = document.getElementById('pinInfo');
+            
+            modal.classList.add('show');
+            
+            if (mode === 'setup') {
+                message.textContent = 'Set your 6-digit Admin PIN';
+                info.textContent = 'You can change this later in settings';
+            } else {
+                message.textContent = 'Enter your 6-digit PIN to access Admin Panel';
+                info.textContent = '';
+            }
+            
+            window.pinMode = mode;
+            window.pinValue = '';
+            updatePINDisplay();
+        }
+
+        function pinKeypress(digit) {
+            if (window.pinValue.length < 6) {
+                window.pinValue += digit;
+                updatePINDisplay();
+                
+                // Auto-submit when 6 digits entered
+                if (window.pinValue.length === 6) {
+                    setTimeout(pinSubmit, 300);
+                }
+            }
+        }
+
+        function pinDelete() {
+            if (window.pinValue.length > 0) {
+                window.pinValue = window.pinValue.slice(0, -1);
+                updatePINDisplay();
+            }
+        }
+
+        function updatePINDisplay() {
+            const input = document.getElementById('pinInput');
+            input.value = '•'.repeat(window.pinValue.length);
+        }
+
+        function pinSubmit() {
+            const error = document.getElementById('pinError');
+            
+            if (window.pinValue.length !== 6) {
+                error.textContent = 'PIN must be 6 digits';
+                return;
+            }
+
+            if (window.pinMode === 'setup') {
+                // Save new PIN
+                adminPIN = window.pinValue;
+                localStorage.setItem('adminPIN', adminPIN);
+                adminAuthenticated = true;
+                error.textContent = '';
+                document.getElementById('pinModal').classList.remove('show');
+                showAdminAlert('addAlert', '✅ Admin PIN set successfully!', 'success');
+                goToPage('admin');
+            } else {
+                // Verify PIN
+                if (window.pinValue === adminPIN) {
+                    adminAuthenticated = true;
+                    error.textContent = '';
+                    document.getElementById('pinModal').classList.remove('show');
+                    goToPage('admin');
+                } else {
+                    error.textContent = '❌ Wrong PIN. Try again.';
+                    window.pinValue = '';
+                    updatePINDisplay();
+                }
+            }
+        }
 
         // ============= INITIALIZATION =============
         function init() {
@@ -1321,6 +1697,17 @@
             renderDaily();
             attachEventListeners();
             initAdminPanel();
+            
+            // Initialize admin panel
+            if (isAdmin) {
+                document.getElementById('adminNav').style.display = 'flex';
+            }
+            
+            // Load GitHub config if exists
+            const savedRepo = localStorage.getItem('githubRepo');
+            if (savedRepo) {
+                document.getElementById('githubRepoInput').value = savedRepo;
+            }
         }
 
         // Load custom duas from localStorage
@@ -1414,7 +1801,13 @@
             document.getElementById('homeNav').addEventListener('click', () => goToPage('home'));
             document.getElementById('favoritesNav').addEventListener('click', () => goToPage('favorites'));
             document.getElementById('settingsNav').addEventListener('click', () => goToPage('settings'));
-            document.getElementById('adminNav').addEventListener('click', () => goToPage('admin'));
+            document.getElementById('adminNav').addEventListener('click', () => {
+                if (!adminAuthenticated) {
+                    setupAdminPIN();
+                } else {
+                    goToPage('admin');
+                }
+            });
 
             // Settings
             document.getElementById('notificationToggle').addEventListener('click', toggleNotifications);
@@ -1676,6 +2069,7 @@
                 }
             });
             document.getElementById('exportCsvBtn').addEventListener('click', exportAsCSV);
+            document.getElementById('syncGithubBtn').addEventListener('click', syncToGitHub);
 
             updateAdminStats();
         }
@@ -1880,6 +2274,230 @@
             alert.textContent = message;
             alert.className = `alert show ${type}`;
             setTimeout(() => alert.classList.remove('show'), 4000);
+        }
+
+        // GitHub Sync Function
+        function syncToGitHub() {
+            const repo = document.getElementById('githubRepoInput').value.trim();
+            const token = document.getElementById('githubTokenInput').value.trim();
+
+            if (!repo || !token) {
+                showAdminAlert('backupAlert', '❌ Please enter repo and token', 'error');
+                return;
+            }
+
+            if (!repo.includes('/')) {
+                showAdminAlert('backupAlert', '❌ Repo format: username/repo', 'error');
+                return;
+            }
+
+            // Save credentials
+            localStorage.setItem('githubRepo', repo);
+            localStorage.setItem('githubToken', token);
+
+            showAdminAlert('backupAlert', '⏳ Syncing to GitHub...', 'info');
+
+            // Prepare data
+            const backup = {
+                version: '2.5',
+                timestamp: new Date().toISOString(),
+                duas: duasData,
+                favorites: JSON.parse(localStorage.getItem('favorites') || '[]')
+            };
+
+            const content = JSON.stringify(backup, null, 2);
+            const base64 = btoa(unescape(encodeURIComponent(content)));
+
+            // GitHub API call
+            syncDataToGitHub(repo, token, base64)
+                .then(() => {
+                    showAdminAlert('backupAlert', '✅ Synced to GitHub successfully!', 'success');
+                })
+                .catch(error => {
+                    showAdminAlert('backupAlert', '❌ Sync failed: ' + error.message, 'error');
+                });
+        }
+
+        function syncDataToGitHub(repo, token, base64Content) {
+            return new Promise((resolve, reject) => {
+                const [owner, repoName] = repo.split('/');
+                const filename = `duas-backup-${new Date().toISOString().slice(0, 10)}.json`;
+                const url = `https://api.github.com/repos/${owner}/${repoName}/contents/${filename}`;
+
+                // Check if file exists
+                fetch(url, {
+                    headers: {
+                        'Authorization': `token ${token}`,
+                        'Accept': 'application/vnd.github.v3+json'
+                    }
+                })
+                .then(response => {
+                    let sha = null;
+                    if (response.ok) {
+                        return response.json().then(data => ({ data, exists: true }));
+                    }
+                    return { data: null, exists: false };
+                })
+                .then(({ data, exists }) => {
+                    const sha = exists ? data.sha : undefined;
+                    
+                    const options = {
+                        method: 'PUT',
+                        headers: {
+                            'Authorization': `token ${token}`,
+                            'Accept': 'application/vnd.github.v3+json',
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            message: `Backup duas - ${new Date().toISOString().slice(0, 10)}`,
+                            content: base64Content,
+                            ...(sha ? { sha } : {})
+                        })
+                    };
+
+                    return fetch(url, options);
+                })
+                .then(response => {
+                    if (response.ok) {
+                        resolve();
+                    } else {
+                        throw new Error('GitHub API error: ' + response.statusText);
+                    }
+                })
+                .catch(error => {
+                    reject(error);
+                });
+            });
+        }
+        function openPINModal() {
+            const pinModal = document.getElementById('pinModal');
+            pinModal.style.display = 'flex';
+
+            if (!adminPIN) {
+                // First time setup
+                document.getElementById('pinSetup').style.display = 'block';
+                document.getElementById('pinVerify').style.display = 'none';
+            } else {
+                // Existing PIN verification
+                document.getElementById('pinSetup').style.display = 'none';
+                document.getElementById('pinVerify').style.display = 'block';
+            }
+        }
+
+        function closePINModal() {
+            document.getElementById('pinModal').style.display = 'none';
+            document.getElementById('pinError').style.display = 'none';
+            document.getElementById('setPinInput').value = '';
+            document.getElementById('verifyPinInput').value = '';
+        }
+
+        function savePIN() {
+            const pin = document.getElementById('setPinInput').value;
+            const errorDiv = document.getElementById('pinError');
+
+            if (pin.length !== 6 || isNaN(pin)) {
+                errorDiv.textContent = '❌ 6 digit PIN enter செய்யவும்';
+                errorDiv.style.display = 'block';
+                return;
+            }
+
+            adminPIN = pin;
+            localStorage.setItem('adminPIN', pin);
+            adminAuthenticated = true;
+            isAdmin = true;
+
+            showAdminAlert('addAlert', '✅ PIN set successfully! Admin access enabled.', 'success');
+            closePINModal();
+            document.getElementById('adminNav').style.display = 'flex';
+        }
+
+        function verifyPIN() {
+            const pin = document.getElementById('verifyPinInput').value;
+            const errorDiv = document.getElementById('pinError');
+
+            if (pin !== adminPIN) {
+                errorDiv.textContent = '❌ PIN incorrect!';
+                errorDiv.style.display = 'block';
+                return;
+            }
+
+            adminAuthenticated = true;
+            isAdmin = true;
+            closePINModal();
+            document.getElementById('adminNav').style.display = 'flex';
+            showAdminAlert('addAlert', '✅ Admin access granted!', 'success');
+        }
+
+        function checkAdminAccess() {
+            if (adminPIN && !adminAuthenticated) {
+                openPINModal();
+                return false;
+            }
+            return true;
+        }
+
+        // GitHub Sync Functions
+        function setupGitHubSync() {
+            const repo = document.getElementById('githubRepoInput').value;
+            const token = document.getElementById('githubTokenInput').value;
+
+            if (!repo || !token) {
+                showAdminAlert('backupAlert', '❌ GitHub credentials needed', 'error');
+                return;
+            }
+
+            localStorage.setItem('githubRepo', repo);
+            localStorage.setItem('githubToken', token);
+            showAdminAlert('backupAlert', '✅ GitHub credentials saved', 'success');
+        }
+
+        function syncToGitHub() {
+            if (!checkAdminAccess()) return;
+
+            const repo = localStorage.getItem('githubRepo');
+            const token = localStorage.getItem('githubToken');
+
+            if (!repo || !token) {
+                showAdminAlert('backupAlert', '❌ Setup GitHub credentials first', 'error');
+                return;
+            }
+
+            // Create backup JSON
+            const backup = {
+                version: '2.5',
+                timestamp: new Date().toISOString(),
+                duas: duasData,
+                favorites: JSON.parse(localStorage.getItem('favorites') || '[]')
+            };
+
+            const fileName = `duas-${new Date().toISOString().slice(0, 10)}.json`;
+            const content = JSON.stringify(backup, null, 2);
+
+            // GitHub API call
+            const [owner, repoName] = repo.split('/');
+            const url = `https://api.github.com/repos/${owner}/${repoName}/contents/${fileName}`;
+
+            fetch(url, {
+                method: 'PUT',
+                headers: {
+                    'Authorization': `token ${token}`,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    message: `Update duas - ${new Date().toLocaleString()}`,
+                    content: btoa(content)
+                })
+            })
+            .then(response => {
+                if (response.ok) {
+                    showAdminAlert('backupAlert', '✅ Synced to GitHub successfully!', 'success');
+                } else {
+                    showAdminAlert('backupAlert', '❌ GitHub sync failed', 'error');
+                }
+            })
+            .catch(error => {
+                showAdminAlert('backupAlert', '❌ Network error: ' + error.message, 'error');
+            });
         }
 
         function scheduleNotification() {
