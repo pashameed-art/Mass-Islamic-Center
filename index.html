@@ -1408,11 +1408,11 @@
                     <div class="settings-group">
                         <h3>👨‍💼 Admin Mode</h3>
                         <div class="settings-item">
-                            <span>Admin Panel Access</span>
-                            <button class="btn-small" id="adminAccessBtn" style="background: var(--primary-color); color: white;">🔐 Setup PIN</button>
+                            <span>Enable Admin Panel</span>
+                            <div class="toggle-switch" id="adminToggle"></div>
                         </div>
                         <p style="font-size: 0.85rem; opacity: 0.7; margin-top: 0.75rem;">
-                            6-digit PIN உடன் Admin Panel protect செய்யவும்
+                            Add duas, upload images, manage content
                         </p>
                     </div>
 
@@ -1802,19 +1802,12 @@
             document.getElementById('homeNav').addEventListener('click', () => goToPage('home'));
             document.getElementById('favoritesNav').addEventListener('click', () => goToPage('favorites'));
             document.getElementById('settingsNav').addEventListener('click', () => goToPage('settings'));
-            document.getElementById('adminNav').addEventListener('click', () => {
-                if (!adminAuthenticated) {
-                    setupAdminPIN();
-                } else {
-                    goToPage('admin');
-                }
-            });
+            document.getElementById('adminNav').addEventListener('click', () => goToPage('admin'));
 
             // Settings
             document.getElementById('notificationToggle').addEventListener('click', toggleNotifications);
             document.getElementById('darkModeToggle').addEventListener('click', toggleDarkMode);
             document.getElementById('adminToggle').addEventListener('click', toggleAdminMode);
-            document.getElementById('adminAccessBtn').addEventListener('click', setupAdminPIN);
             document.getElementById('notificationTime').addEventListener('change', (e) => {
                 notificationTime = e.target.value;
                 localStorage.setItem('notificationTime', notificationTime);
