@@ -1814,6 +1814,7 @@
             document.getElementById('notificationToggle').addEventListener('click', toggleNotifications);
             document.getElementById('darkModeToggle').addEventListener('click', toggleDarkMode);
             document.getElementById('adminToggle').addEventListener('click', toggleAdminMode);
+            document.getElementById('adminAccessBtn').addEventListener('click', setupAdminPIN);
             document.getElementById('notificationTime').addEventListener('change', (e) => {
                 notificationTime = e.target.value;
                 localStorage.setItem('notificationTime', notificationTime);
